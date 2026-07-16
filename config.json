@@ -1,1 +1,18 @@
-
+{
+  "bot": {
+    "username": "Anika",
+    "auth": "offline"
+  },
+  "server": {
+    "host": "SkySMP6007.aternos.me",
+    "port": 40447,
+    "version": false
+  },
+  "owner": "Error774328",
+  "prefix": "!",
+  "settings": {
+    "autoReconnect": true,
+    "autoEat": true,
+    "antiAfk": true
+  }
+}
