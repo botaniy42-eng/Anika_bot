@@ -5,8 +5,8 @@ const path = require('path');
 const config = require('./config.json');
 
 const bot = mineflayer.createBot({
-    host: config.host || 'arafat602.minefort.com',
-    port: config.port || 19132,
+    host: config.host || 'SkySMP6007.aternos.me',
+    port: config.port || 40447,
     username: config.username || 'Anika',
     version: config.version || false,
     auth: 'offline' 
