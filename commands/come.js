@@ -1,19 +1,17 @@
+const { goals } = require('mineflayer-pathfinder');
+
 module.exports = {
-    name: 'come',
-    description: 'বটটি আপনার কাছে চলে আসবে',
+    name: 'follow',
+    description: 'বটটি আপনাকে তাড়া করে বা পিছু পিছু যাবে',
     execute(bot, sender, args) {
         const player = bot.players[sender];
         if (!player || !player.entity) {
-            return bot.chat(`${sender}, আমি তো তোমাকে দেখতে পাচ্ছি না! একটু সামনে আসো।`);
+            return bot.chat(`তোমাকে খুঁজে পাচ্ছি না, ${sender}!`);
         }
 
-        const pos = player.entity.position;
-        bot.chat(`আসছি ${sender}!`);
+        bot.chat(`আমি তোমাকে ফলো করছি, ${sender}!`);
         
-        // Mineflayer এর pathfinder থাকলে এটি আরও স্মুথলি কাজ করবে
-        bot.lookAt(pos);
-        // বেসিক মুভমেন্ট (সামনে হাঁটা)
-        bot.setControlState('forward', true);
-        setTimeout(() => bot.clearControlStates(), 3000); // ৩ সেকেন্ড হেঁটে থেমে যাবে
+        // অনবরত প্লেয়ারের পেছনে হাঁটার গোল সেট করা
+        bot.pathfinder.setGoal(new goals.GoalFollow(player.entity, 1), true);
     }
 };
