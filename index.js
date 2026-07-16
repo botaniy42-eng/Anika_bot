@@ -1,7 +1,7 @@
 const bot = mineflayer.createBot({
-    host: config.host || 'SkySMP6007.aternos.me',
-    port: config.port || 40447,
+    host: config.host || 'arafat602.minefort.com',
+    port: config.port || 19132,
     username: config.username || 'AnikaBot',
-    version: config.version || false,
+    version: config.version || false, // সার্ভারের ভার্সন অনুযায়ী এটি অটো ডিটেক্ট করবে
     auth: 'offline' 
 });
